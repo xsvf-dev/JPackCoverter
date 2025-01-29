@@ -11,7 +11,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BlocksTransformer implements ITransformer {
+public class BlockRenamingTransformer implements ITransformer {
     Map<String, String> renamePairs = new HashMap<>();
     {
         renamePairs.put("stone_granite.png", "granite.png");
@@ -96,6 +96,154 @@ public class BlocksTransformer implements ITransformer {
         renamePairs.put("door_spruce_upper.png", "spruce_door_top.png");
         renamePairs.put("door_wood_lower.png", "oak_door_bottom.png");
         renamePairs.put("door_wood_upper.png", "oak_door_top.png");
+        renamePairs.put("double_plant_fern_bottom.png", "large_fern_bottom.png");
+        renamePairs.put("double_plant_fern_top.png", "large_fern_top.png");
+        renamePairs.put("double_plant_grass_bottom.png", "tall_grass_bottom.png");
+        renamePairs.put("double_plant_grass_top.png", "tall_grass_top.png");
+        renamePairs.put("double_plant_paeonia_bottom.png", "peony_bottom.png");
+        renamePairs.put("double_plant_paeonia_top.png", "peony_top.png");
+        renamePairs.put("double_plant_rose_bottom.png", "rose_bush_bottom.png");
+        renamePairs.put("double_plant_rose_top.png", "rose_bush_top.png");
+        renamePairs.put("double_plant_sunflower_back.png", "sunflower_back.png");
+        renamePairs.put("double_plant_sunflower_bottom.png", "sunflower_bottom.png");
+        renamePairs.put("double_plant_sunflower_top.png", "sunflower_top.png");
+        renamePairs.put("double_plant_sunflower_front.png", "sunflower_front.png");
+        renamePairs.put("double_plant_syringa_bottom.png", "lilac_bottom.png");
+        renamePairs.put("double_plant_syringa_top.png", "lilac_top.png");
+        renamePairs.put("dropper_front_horizontal.png", "dropper_front.png");
+        renamePairs.put("endframe_eye.png", "end_portal_frame_eye.png");
+        renamePairs.put("endframe_side.png", "end_portal_frame_side.png");
+        renamePairs.put("endframe_top.png", "end_portal_frame_top.png");
+        renamePairs.put("farmland_dry.png", "farmland.png");
+        renamePairs.put("farmland_wet.png", "farmland_moist.png");
+        renamePairs.put("fire_layer_0.png", "fire_0.png");
+        renamePairs.put("fire_layer_1.png", "fire_1.png");
+        renamePairs.put("flower_allium.png", "allium.png");
+        renamePairs.put("flower_blue_orchid.png", "blue_orchid.png");
+        renamePairs.put("flower_dandelion.png", "dandelion.png");
+        renamePairs.put("flower_houstonia.png", "azure_bluet.png");
+        renamePairs.put("flower_oxeye_daisy.png", "oxeye_daisy.png");
+        renamePairs.put("flower_rose.png", "poppy.png");
+        renamePairs.put("flower_tulip_orange.png", "orange_tulip.png");
+        renamePairs.put("flower_tulip_pink.png", "pink_tulip.png");
+        renamePairs.put("flower_tulip_red.png", "red_tulip.png");
+        renamePairs.put("flower_tulip_white.png", "white_tulip.png");
+        renamePairs.put("furnace_front_off.png", "furnace_front.png");
+        renamePairs.put("glass_black.png", "black_stained_glass.png");
+        renamePairs.put("glass_blue.png", "blue_stained_glass.png");
+        renamePairs.put("glass_brown.png", "brown_stained_glass.png");
+        renamePairs.put("glass_cyan.png", "cyan_stained_glass.png");
+        renamePairs.put("glass_gray.png", "gray_stained_glass.png");
+        renamePairs.put("glass_green.png", "green_stained_glass.png");
+        renamePairs.put("glass_light_blue.png", "light_blue_stained_glass.png");
+        renamePairs.put("glass_lime.png", "lime_stained_glass.png");
+        renamePairs.put("glass_magenta.png", "magenta_stained_glass.png");
+        renamePairs.put("glass_orange.png", "orange_stained_glass.png");
+        renamePairs.put("glass_pink.png", "pink_stained_glass.png");
+        renamePairs.put("glass_purple.png", "purple_stained_glass.png");
+        renamePairs.put("glass_red.png", "red_stained_glass.png");
+        renamePairs.put("glass_silver.png", "light_gray_stained_glass.png");
+        renamePairs.put("glass_white.png", "white_stained_glass.png");
+        renamePairs.put("glass_yellow.png", "yellow_stained_glass.png");
+        renamePairs.put("glass_pane_top_black.png", "black_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_blue.png", "blue_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_brown.png", "brown_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_cyan.png", "cyan_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_gray.png", "gray_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_green.png", "green_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_light_blue.png", "light_blue_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_lime.png", "lime_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_magenta.png", "magenta_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_orange.png", "orange_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_pink.png", "pink_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_purple.png", "purple_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_red.png", "red_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_silver.png", "light_gray_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_white.png", "white_stained_glass_pane_top.png");
+        renamePairs.put("glass_pane_top_yellow.png", "yellow_stained_glass_pane_top.png");
+        renamePairs.put("grass_side_overlay.png", "grass_block_side_overlay.png");
+        renamePairs.put("grass_side_snowed.png", "grass_block_snow.png");
+        renamePairs.put("hardened_clay.png", "terracotta.png");
+        renamePairs.put("hardened_clay_stained_black.png", "black_terracotta.png");
+        renamePairs.put("hardened_clay_stained_blue.png", "blue_terracotta.png");
+        renamePairs.put("hardened_clay_stained_brown.png", "brown_terracotta.png");
+        renamePairs.put("hardened_clay_stained_cyan.png", "cyan_terracotta.png");
+        renamePairs.put("hardened_clay_stained_gray.png", "gray_terracotta.png");
+        renamePairs.put("hardened_clay_stained_green.png", "green_terracotta.png");
+        renamePairs.put("hardened_clay_stained_light_blue.png", "light_blue_terracotta.png");
+        renamePairs.put("hardened_clay_stained_lime.png", "lime_terracotta.png");
+        renamePairs.put("hardened_clay_stained_magenta.png", "magenta_terracotta.png");
+        renamePairs.put("hardened_clay_stained_orange.png", "orange_terracotta.png");
+        renamePairs.put("hardened_clay_stained_pink.png", "pink_terracotta.png");
+        renamePairs.put("hardened_clay_stained_purple.png", "purple_terracotta.png");
+        renamePairs.put("hardened_clay_stained_red.png", "red_terracotta.png");
+        renamePairs.put("hardened_clay_stained_silver.png", "light_gray_terracotta.png");
+        renamePairs.put("hardened_clay_stained_white.png", "white_terracotta.png");
+        renamePairs.put("hardened_clay_stained_yellow.png", "yellow_terracotta.png");
+        renamePairs.put("ice_packed.png", "packed_ice.png");
+        renamePairs.put("itemframe_background.png", "item_frame.png");
+        renamePairs.put("leaves_acacia.png", "acacia_leaves.png");
+        renamePairs.put("leaves_big_oak.png", "dark_oak_leaves.png");
+        renamePairs.put("leaves_birch.png", "birch_leaves.png");
+        renamePairs.put("leaves_jungle.png", "jungle_leaves.png");
+        renamePairs.put("leaves_oak.png", "oak_leaves.png");
+        renamePairs.put("leaves_spruce.png", "spruce_leaves.png");
+        renamePairs.put("melon_stem_connected.png", "attached_melon_stem.png");
+        renamePairs.put("melon_stem_disconnected.png", "melon_stem.png");
+        renamePairs.put("mob_spawner.png", "spawner.png");
+        renamePairs.put("mushroom_block_skin_brown.png", "brown_mushroom_block.png");
+        renamePairs.put("mushroom_block_skin_red.png", "red_mushroom_block.png");
+        renamePairs.put("mushroom_block_skin_stem.png", "mushroom_stem.png");
+        renamePairs.put("mushroom_brown.png", "brown_mushroom.png");
+        renamePairs.put("mushroom_red.png", "red_mushroom.png");
+        renamePairs.put("nether_wart_stage_0.png", "nether_wart_stage0.png");
+        renamePairs.put("nether_wart_stage_1.png", "nether_wart_stage1.png");
+        renamePairs.put("nether_wart_stage_2.png", "nether_wart_stage2.png");
+        renamePairs.put("noteblock.png", "note_block.png");
+        renamePairs.put("piston_top_normal.png", "piston_top.png");
+        renamePairs.put("portal.png", "nether_portal.png");
+        renamePairs.put("potatoes_stage_0.png", "potatoes_stage0.png");
+        renamePairs.put("potatoes_stage_1.png", "potatoes_stage1.png");
+        renamePairs.put("potatoes_stage_2.png", "potatoes_stage2.png");
+        renamePairs.put("potatoes_stage_3.png", "potatoes_stage3.png");
+        renamePairs.put("pumpkin_face_off.png", "carved_pumpkin.png");
+        renamePairs.put("pumpkin_face_on.png", "jack_o_lantern.png");
+        renamePairs.put("pumpkin_stem_connected.png", "attached_pumpkin_stem.png");
+        renamePairs.put("pumpkin_stem_disconnected.png", "pumpkin_stem.png");
+        renamePairs.put("rail_activator.png", "activator_rail.png");
+        renamePairs.put("rail_activator_powered.png", "activator_rail_on.png");
+        renamePairs.put("rail_detector.png", "detector_rail.png");
+        renamePairs.put("rail_detector_powered.png", "detector_rail_on.png");
+        renamePairs.put("rail_golden.png", "powered_rail.png");
+        renamePairs.put("rail_golden_powered.png", "powered_rail_on.png");
+        renamePairs.put("rail_normal.png", "rail.png");
+        renamePairs.put("rail_normal_turned.png", "rail_corner.png");
+        renamePairs.put("redstone_dust_cross_overlay.png", "redstone_dust_overlay.png");
+        renamePairs.put("redstone_lamp_off.png", "redstone_lamp.png");
+        renamePairs.put("redstone_torch_on.png", "redstone_torch.png");
+        renamePairs.put("reeds.png", "sugar_cane.png");
+        renamePairs.put("repeater_off.png", "repeater.png");
+        renamePairs.put("sapling_acacia.png", "acacia_sapling.png");
+        renamePairs.put("sapling_birch.png", "birch_sapling.png");
+        renamePairs.put("sapling_jungle.png", "jungle_sapling.png");
+        renamePairs.put("sapling_oak.png", "oak_sapling.png");
+        renamePairs.put("sapling_roofed.png", "dark_oak_sapling.png");
+        renamePairs.put("sapling_spruce.png", "spruce_sapling.png");
+        renamePairs.put("slime.png", "slime_block.png");
+        renamePairs.put("grass.png", "tall_grass.png");
+        renamePairs.put("torch_on.png", "torch.png");
+        renamePairs.put("trapdoor.png", "oak_trapdoor.png");
+        renamePairs.put("trip_wire_source.png", "tripwire_hook.png");
+        renamePairs.put("waterlily.png", "lily_pad.png");
+        renamePairs.put("web.png", "cobweb.png");
+        renamePairs.put("wheat_stage_0.png", "wheat_stage0.png");
+        renamePairs.put("wheat_stage_1.png", "wheat_stage1.png");
+        renamePairs.put("wheat_stage_2.png", "wheat_stage2.png");
+        renamePairs.put("wheat_stage_3.png", "wheat_stage3.png");
+        renamePairs.put("wheat_stage_4.png", "wheat_stage4.png");
+        renamePairs.put("wheat_stage_5.png", "wheat_stage5.png");
+        renamePairs.put("wheat_stage_6.png", "wheat_stage6.png");
+        renamePairs.put("wheat_stage_7.png", "wheat_stage7.png");
     }
 
     @Override
@@ -128,43 +276,6 @@ public class BlocksTransformer implements ITransformer {
                 System.out.println("blocks transformer: " + entry.getKey() + ":" + entry.getValue());
                 entry.setValue(true);
             }
-        }
-    }
-
-    public static void processRedstoneDustCrossImage(String blocksPathNew) {
-        log("Processing redstone dust cross image in: " + blocksPathNew);
-
-        // redstone_dust_cross.png 文件路径
-        File redstoneDustCrossFile = new File(blocksPathNew, "redstone_dust_cross.png");
-
-        if (redstoneDustCrossFile.exists()) {
-            try {
-                // 读取图片
-                BufferedImage img = ImageIO.read(redstoneDustCrossFile);
-
-                // 检查图像是否是 16x16
-                if (img.getWidth() == 16 && img.getHeight() == 16) {
-                    // 遍历每个像素并修改
-                    for (int x = 0; x < 16; x++) {
-                        for (int y = 0; y < 16; y++) {
-                            // 保留交叉的红石尘土部分
-                            if (!((x == y && 5 <= x && x <= 11) || (x + y == 16 && 5 <= x && x <= 11))) {
-                                img.setRGB(x, y, 0x00000000); // 设置为透明 (Alpha 0)
-                            }
-                        }
-                    }
-                    // 保存新文件
-                    File newFile = new File(blocksPathNew, "red_dust_dot.png");
-                    ImageIO.write(img, "PNG", newFile);
-                    log("Processed and renamed 'redstone_dust_cross.png' to 'red_dust_dot.png'");
-                } else {
-                    log("'redstone_dust_cross.png' is not a 16x16 image");
-                }
-            } catch (IOException e) {
-                log("Error processing 'redstone_dust_cross.png': " + e.getMessage());
-            }
-        } else {
-            log("'redstone_dust_cross.png' not found in " + blocksPathNew);
         }
     }
 }

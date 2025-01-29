@@ -1,4 +1,4 @@
-package ovo.xsvf.converters;
+package ovo.xsvf.transformers;
 
 import ovo.xsvf.FileUtils;
 import ovo.xsvf.api.ITransformer;

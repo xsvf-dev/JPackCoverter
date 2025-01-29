@@ -6,12 +6,32 @@ group = 'ovo.xsvf'
 version = '1.0-SNAPSHOT'
 
 repositories {
+    mavenLocal()
+    maven { url 'https://maven.aliyun.com/repository/central' }
+    maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    maven { url 'https://jitpack.io' }
+    maven { url '"https://repo.essential.gg/repository/maven-public"' }
+    maven { url "https://maven.fabricmc.net/" }
+    maven { url "https://maven.architectury.dev/" }
+    maven { url "https://files.minecraftforge.net/maven/" }
     mavenCentral()
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'net.sf.jopt-simple:jopt-simple:5.0.2'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // apache ioutils
+    implementation 'commons-io:commons-io:2.14.0'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
 
 test {

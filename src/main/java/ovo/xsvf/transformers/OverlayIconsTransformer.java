@@ -1,12 +1,9 @@
-package ovo.xsvf.converters;
+package ovo.xsvf.transformers;
 
 import ovo.xsvf.api.ITransformer;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.HashMap;
 
 public class OverlayIconsTransformer implements ITransformer {
