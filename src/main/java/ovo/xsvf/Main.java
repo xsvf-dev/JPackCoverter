@@ -21,7 +21,7 @@ public class Main {
                 new Generic54ImageTransformer(),
                 new ItemsPathTransformer(),
                 new NetheriteItemsTransformer(),
-                new ItemRenameTransformer(),
+                new ItemRenamingTransformer(),
                 new ClockTransformer(),
                 new CompassTransformer(),
                 new ArrowTransformer(),

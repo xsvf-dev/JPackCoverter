@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Optional;
 
 public class FileUtils {
     public static boolean checkAndCreateParentDir(File file) {
@@ -13,7 +14,10 @@ public class FileUtils {
     }
 
     public static boolean copyFile(Path source, Path target) throws IOException {
-        if (!source.toFile().exists()) return false;
+        if (!source.toFile().exists()) {
+            System.out.println("Source file does not exist: " + source.toString());
+            return false;
+        }
         Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
         return true;
     }
@@ -54,5 +58,14 @@ public class FileUtils {
                 return FileVisitResult.CONTINUE;
             }
         });
+    }
+
+    public static boolean delete(File file) throws IOException {
+        if (file.isDirectory()) {
+            for (File child : Optional.ofNullable(file.listFiles()).orElse(new File[0])) {
+                delete(child);
+            }
+        }
+        return file.delete();
     }
 }

@@ -11,8 +11,10 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -37,13 +39,11 @@ public class ResPackConverter implements IConverter {
         if (!outDir.mkdirs()) {
             throw new IOException("Failed to create temp dir: " + outDir.getAbsolutePath());
         }
-        outDir.deleteOnExit();
 
         File inDir = new File(output.getParentFile(), "temp_in_" + System.currentTimeMillis());
         if (!inDir.mkdirs()) {
             throw new IOException("Failed to create temp dir: " + inDir.getAbsolutePath());
         }
-        inDir.deleteOnExit();
 
         // create a hashmap of all files in the input.zip
         HashMap<String, Boolean> fileMap = new HashMap<>();
@@ -77,7 +77,6 @@ public class ResPackConverter implements IConverter {
                     String string = out.relativize(file).toString().replace("\\", "/");
                     fileMap.put(string, true);
                     zipOutputStream.putNextEntry(new ZipEntry(string));
-                    FileInputStream fis = new FileInputStream(file.toFile());
                     zipOutputStream.write(Files.readAllBytes(file));
                     zipOutputStream.closeEntry();
                     return FileVisitResult.CONTINUE;
@@ -98,6 +97,16 @@ public class ResPackConverter implements IConverter {
                 }
             });
         }
+
+        // wait for a bit to allow the zip to be written
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ignored) {}
+
+        FileUtils.delete(inDir);
+        FileUtils.delete(outDir);
+
+        System.out.println("Done!");
     }
 }
 
